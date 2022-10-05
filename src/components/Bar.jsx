@@ -12,10 +12,10 @@ import { motion, useMotionValue, useTransform } from 'framer-motion';
 import tick from '../assets/tick.svg';
 
 const helpText = [
-	{ gray: 'first gray text', blue: 'first text blue' },
-	{ gray: 'Second text gray', blue: 'SeconD blue text' },
-	{ gray: 'THIRD gray text', blue: 'Thid text blue' },
-	{ gray: 'Fourth text gray', blue: 'FOURTH blue text' },
+	{ gray: ['1', '2', '3'], blue: ['4', '5', '6'] },
+	{ gray: ['7', '8', '9'], blue: ['10', '11', '12'] },
+	{ gray: ['13', '14', '15'], blue: ['16', '17', '18'] },
+	{ gray: ['19', '20', '21'], blue: ['22', '23', '24'] },
 ];
 
 const helpItems = [1, 2, 3];
@@ -96,17 +96,17 @@ const Bar = () => {
 							<div className=' w-[85%] absolute left-0  -z-50 h-2 rounded-2xl  flex bg-gradient-to-br  from-[#9408FE] via-indigo-600 to-[#05D4FF]'></div>
 						</div>
 						<div className='  flex-row  items-center justify-center mt-auto'>
-							{helpItems.map((item) => {
+							{helpItems.map((item, i) => {
 								return (
 									<div className=' flex items-center w-full mt-5 '>
 										<img src={tick} className=' w-8 md:w-10' alt='/' />
 										<p className=' ml-5 leading-8 font-light  '>
 											<span className=' lg:text-xl'>
 												{/* 30 Minutes saved Per Month: */}
-												{helpText[index].gray}
+												{helpText[index].gray[i]}
 											</span>
 											<span className='text-transparent bg-clip-text bg-gradient-to-br from-[#9408FE] via-indigo-600 to-[#05D4FF] lg:ml-3'>
-												{helpText[index].blue}
+												{helpText[index].blue[i]}
 											</span>
 										</p>
 									</div>
